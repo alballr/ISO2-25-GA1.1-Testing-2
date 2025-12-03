@@ -32,10 +32,10 @@ public class testing2 {
             customer.setIncome(cli.readDouble());
             
             cli.print("Travel with children? (true/false): ");
-            customer.setTravelWithChildren(Boolean.parseBoolean(cli.readString()));
-            
+            customer.setTravelWithChildren(cli.readBoolean());
+
             cli.print("Lives with parents? (true/false): ");
-            customer.setLivesWithParents(Boolean.parseBoolean(cli.readString()));
+            customer.setLivesWithParents(cli.readBoolean());
             
             TypeFare fare = FareRecommendationSystem.getFare(customer);
             
