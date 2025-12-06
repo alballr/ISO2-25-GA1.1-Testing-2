@@ -39,33 +39,50 @@ public class FareRecommendationSystem {
     
     
     public static boolean isStudent(AirlineCustomer c) {
-        return c.getAge() >= 18 && c.getAge() <= 25 
-            && c.getTravelerType() == TravelerType.STUDENT
-            && c.getTravelClass() == TravelClass.ECONOMY 
-            && c.getFlightsPerYear() >= 9;
+    	boolean result = false;
+    	if(c.getAge() >= 18 && c.getAge() <= 25 
+                && c.getTravelerType() == TravelerType.STUDENT
+                && c.getTravelClass() == TravelClass.ECONOMY 
+                && c.getFlightsPerYear() >= 9) {
+    		result = true;
+    	}
+        return result;
     }
     
     public static boolean isYoungWorker(AirlineCustomer c) {
-        return c.getAge() >= 18 && c.getAge() <= 25 
-            && c.getTravelerType() == TravelerType.WORKER
-            && c.getTravelClass() == TravelClass.ECONOMY 
-            && c.getFlightsPerYear() >= 3;
+    	boolean result = false;
+    	if(c.getAge() >= 18 && c.getAge() <= 25 
+                && c.getTravelerType() == TravelerType.WORKER
+                && c.getTravelClass() == TravelClass.ECONOMY 
+                && c.getFlightsPerYear() >= 3) {
+    		result = true;
+    	}
+        return result;
+        
     }
     
     public static boolean isMidIncomeAdult(AirlineCustomer c) {
-        return c.getAge() > 25 
-            && c.getIncome() >= 20000 && c.getIncome() < 35000 
-            && c.getTravelClass() == TravelClass.ECONOMY 
-            && c.getFlightsPerYear() >= 6 
-            && c.getDestination() == Destination.EUROPE;
+    	boolean result = false;
+    	if(c.getAge() > 25 
+                && c.getIncome() >= 20000 && c.getIncome() < 35000 
+                && c.getTravelClass() == TravelClass.ECONOMY 
+                && c.getFlightsPerYear() >= 6 
+                && c.getDestination() == Destination.EUROPE) {
+    		result = true;
+    	}
+        return result;
     }
     
     public static boolean isHighIncomeAdult(AirlineCustomer c) {
-        return c.getAge() > 25 
-            && c.getIncome() >= 35000 
-            && c.getTravelClass() == TravelClass.BUSINESS 
-            && c.getFlightsPerYear() >= 6 
-            && (c.getDestination() == Destination.ASIA 
-                || c.getDestination() == Destination.AMERICA);
+    	boolean result = false;
+    	if(c.getAge() > 25 
+                && c.getIncome() >= 35000 
+                && c.getTravelClass() == TravelClass.BUSINESS 
+                && c.getFlightsPerYear() >= 6 
+                && (c.getDestination() == Destination.ASIA 
+                    || c.getDestination() == Destination.AMERICA)) {
+    		result = true;
+    	}
+        return result;
     }
 }
