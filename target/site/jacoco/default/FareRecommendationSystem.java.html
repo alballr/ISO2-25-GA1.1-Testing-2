@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>FareRecommendationSystem.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Testing 2</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">FareRecommendationSystem.java</span></div><h1>FareRecommendationSystem.java</h1><pre class="source lang-java linenums"><span class="nc" id="L1">public class FareRecommendationSystem {</span>
+    
+    public static TypeFare getFare(AirlineCustomer c) {
+<span class="fc" id="L4">        TypeFare fare = null;</span>
+<span class="pc bpc" id="L5" title="3 of 4 branches missed.">        if (c.getAge() &lt; 18 &amp;&amp; c.getFlightsPerYear() &gt;= 6) {</span>
+<span class="nc" id="L6">            fare = new TypeFare(&quot;Pajarillo&quot;, 10);</span>
+        }
+        
+<span class="fc bfc" id="L9" title="All 2 branches covered.">        if (isStudent(c)) {</span>
+<span class="fc" id="L10">            fare = new TypeFare(&quot;Gorrión&quot;, 15);</span>
+        }
+        
+<span class="fc bfc" id="L13" title="All 2 branches covered.">        if (isYoungWorker(c)) {</span>
+<span class="pc bpc" id="L14" title="1 of 2 branches missed.">            if (c.isLivesWithParents()) {</span>
+<span class="nc" id="L15">                fare = new TypeFare(&quot;Travel While You Can&quot;, 5);</span>
+            } else {
+<span class="fc" id="L17">                fare = new TypeFare(&quot;Daring to Leave the Nest&quot;, 25);</span>
+            }
+        }
+        
+<span class="pc bpc" id="L21" title="1 of 2 branches missed.">        if (isMidIncomeAdult(c)) {</span>
+<span class="nc bnc" id="L22" title="All 2 branches missed.">            if (c.isTravelWithChildren()) {</span>
+<span class="nc" id="L23">                fare = new TypeFare(&quot;Discover Europe with Your Little Ones&quot;, 10);</span>
+            } else {
+<span class="nc" id="L25">                fare = new TypeFare(&quot;Discover Europe&quot;, 15);</span>
+            }
+        }
+        
+<span class="fc bfc" id="L29" title="All 2 branches covered.">        if (isHighIncomeAdult(c)) {</span>
+<span class="fc bfc" id="L30" title="All 2 branches covered.">            if (c.isTravelWithChildren()) {</span>
+<span class="fc" id="L31">                fare = new TypeFare(&quot;Discover the World with Your Little Ones&quot;, 10);</span>
+            } else {
+<span class="fc" id="L33">                fare = new TypeFare(&quot;Discover the World&quot;, 20);</span>
+            }
+        }
+        
+<span class="fc" id="L37">        return fare;</span>
+    }
+    
+    
+    public static boolean isStudent(AirlineCustomer c) {
+<span class="fc" id="L42">    	boolean result = false;</span>
+<span class="fc bfc" id="L43" title="All 4 branches covered.">    	if(c.getAge() &gt;= 18 &amp;&amp; c.getAge() &lt;= 25 </span>
+<span class="fc bfc" id="L44" title="All 2 branches covered.">                &amp;&amp; c.getTravelerType() == TravelerType.STUDENT</span>
+<span class="fc bfc" id="L45" title="All 2 branches covered.">                &amp;&amp; c.getTravelClass() == TravelClass.ECONOMY </span>
+<span class="fc bfc" id="L46" title="All 2 branches covered.">                &amp;&amp; c.getFlightsPerYear() &gt;= 9) {</span>
+<span class="fc" id="L47">    		result = true;</span>
+    	}
+<span class="fc" id="L49">        return result;</span>
+    }
+    
+    public static boolean isYoungWorker(AirlineCustomer c) {
+<span class="fc" id="L53">    	boolean result = false;</span>
+<span class="fc bfc" id="L54" title="All 4 branches covered.">    	if(c.getAge() &gt;= 18 &amp;&amp; c.getAge() &lt;= 25 </span>
+<span class="fc bfc" id="L55" title="All 2 branches covered.">                &amp;&amp; c.getTravelerType() == TravelerType.WORKER</span>
+<span class="fc bfc" id="L56" title="All 2 branches covered.">                &amp;&amp; c.getTravelClass() == TravelClass.ECONOMY </span>
+<span class="fc bfc" id="L57" title="All 2 branches covered.">                &amp;&amp; c.getFlightsPerYear() &gt;= 3) {</span>
+<span class="fc" id="L58">    		result = true;</span>
+    	}
+<span class="fc" id="L60">        return result;</span>
+        
+    }
+    
+    public static boolean isMidIncomeAdult(AirlineCustomer c) {
+<span class="fc" id="L65">    	boolean result = false;</span>
+<span class="fc bfc" id="L66" title="All 2 branches covered.">    	if(c.getAge() &gt; 25 </span>
+<span class="fc bfc" id="L67" title="All 4 branches covered.">                &amp;&amp; c.getIncome() &gt;= 20000 &amp;&amp; c.getIncome() &lt; 35000 </span>
+<span class="fc bfc" id="L68" title="All 2 branches covered.">                &amp;&amp; c.getTravelClass() == TravelClass.ECONOMY </span>
+<span class="fc bfc" id="L69" title="All 2 branches covered.">                &amp;&amp; c.getFlightsPerYear() &gt;= 6 </span>
+<span class="fc bfc" id="L70" title="All 2 branches covered.">                &amp;&amp; c.getDestination() == Destination.EUROPE) {</span>
+<span class="fc" id="L71">    		result = true;</span>
+    	}
+<span class="fc" id="L73">        return result;</span>
+    }
+    
+    public static boolean isHighIncomeAdult(AirlineCustomer c) {
+<span class="fc" id="L77">    	boolean result = false;</span>
+<span class="fc bfc" id="L78" title="All 2 branches covered.">    	if(c.getAge() &gt; 25 </span>
+<span class="fc bfc" id="L79" title="All 2 branches covered.">                &amp;&amp; c.getIncome() &gt;= 35000 </span>
+<span class="fc bfc" id="L80" title="All 2 branches covered.">                &amp;&amp; c.getTravelClass() == TravelClass.BUSINESS </span>
+<span class="fc bfc" id="L81" title="All 2 branches covered.">                &amp;&amp; c.getFlightsPerYear() &gt;= 6 </span>
+<span class="fc bfc" id="L82" title="All 2 branches covered.">                &amp;&amp; (c.getDestination() == Destination.ASIA </span>
+<span class="fc bfc" id="L83" title="All 2 branches covered.">                    || c.getDestination() == Destination.AMERICA)) {</span>
+<span class="fc" id="L84">    		result = true;</span>
+    	}
+<span class="fc" id="L86">        return result;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

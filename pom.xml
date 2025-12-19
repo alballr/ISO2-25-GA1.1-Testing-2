@@ -1,30 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-  <groupId>es.uclm.esi.iso2.axx</groupId>
-  <artifactId>ISO2-25-GA1.1-Testing-2</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>jar</packaging>
+    <groupId>es.uclm.esi.iso2.axx</groupId>
+    <artifactId>ISO2-25-GA1.1-Testing-2</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
-  <name>Testing 2</name>
-  <url>http://www.example.com</url>
+    <name>Testing 2</name>
+    <url>http://www.example.com</url>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
-  </properties>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
 
-   <dependencies>
+    <!-- DEPENDENCIES -->
+    <dependencies>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.13.2</version>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>es.uclm.esi.iso2.axx</groupId>
             <artifactId>command-Line-Interface</artifactId>
@@ -32,17 +36,18 @@
         </dependency>
     </dependencies>
 
-    <!-- BUILD: aquí va la configuración de JaCoCo -->
+    <!-- BUILD -->
     <build>
         <plugins>
-            <!-- Site plugin actualizado para evitar conflictos con Doxia -->
+
+            <!-- Maven Site -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
                 <version>3.12.1</version>
             </plugin>
 
-            <!-- Plugin JaCoCo para generar cobertura -->
+            <!-- JaCoCo -->
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
@@ -50,30 +55,30 @@
                 <executions>
 
                     <execution>
-                        <id>default-prepare-agent</id>
+                        <id>prepare-agent</id>
                         <goals>
                             <goal>prepare-agent</goal>
                         </goals>
                     </execution>
 
                     <execution>
-                        <id>default-report</id>
+                        <id>report</id>
                         <goals>
                             <goal>report</goal>
                         </goals>
                     </execution>
 
                     <execution>
-                        <id>default-check</id>
+                        <id>check</id>
                         <goals>
                             <goal>check</goal>
                         </goals>
                         <configuration>
                             <rules>
-                                <rule implementation="org.jacoco.maven.RuleConfiguration">
+                                <rule>
                                     <element>BUNDLE</element>
                                     <limits>
-                                        <limit implementation="org.jacoco.report.check.Limit">
+                                        <limit>
                                             <counter>COMPLEXITY</counter>
                                             <value>COVEREDRATIO</value>
                                             <minimum>0.80</minimum>
@@ -94,14 +99,14 @@
     <reporting>
         <plugins>
 
-            <!-- Información general del proyecto -->
+            <!-- Project information -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-project-info-reports-plugin</artifactId>
                 <version>3.5.0</version>
             </plugin>
 
-            <!-- Informe Surefire (test) -->
+            <!-- Surefire report -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-report-plugin</artifactId>
@@ -111,7 +116,7 @@
                 </configuration>
             </plugin>
 
-            <!-- Informe HTML de JaCoCo -->
+            <!-- JaCoCo HTML -->
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
@@ -119,6 +124,35 @@
                     <reportSet>
                         <reports>
                             <report>report</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+
+            <!-- PMD + CPD -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>3.26.0</version>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>pmd</report>
+                            <report>cpd</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+
+            <!-- SpotBugs (FindBugs replacement) -->
+            <plugin>
+                <groupId>com.github.spotbugs</groupId>
+                <artifactId>spotbugs-maven-plugin</artifactId>
+                <version>4.8.6.0</version>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>spotbugs</report>
                         </reports>
                     </reportSet>
                 </reportSets>
