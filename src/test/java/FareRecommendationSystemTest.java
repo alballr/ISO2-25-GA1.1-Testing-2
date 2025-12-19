@@ -364,56 +364,41 @@ public class FareRecommendationSystemTest {
     @Test
     public void getFareTest() {
 
-        AirlineCustomer g1 = new AirlineCustomer(20, 9, TravelerType.STUDENT, TravelClass.ECONOMY, null, 0, false, false);
-        assertEquals("STUDENT", FareRecommendationSystem.getFare(g1));
+        AirlineCustomer g1 = new AirlineCustomer(15, 6, null, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals("Pajarillo", FareRecommendationSystem.getFare(g1).getName());
+        assertEquals(10, FareRecommendationSystem.getFare(g1).getDiscount());
 
-        AirlineCustomer g2 = new AirlineCustomer(17, 9, TravelerType.STUDENT, TravelClass.ECONOMY, null, 0, false, false);
-        assertEquals(null, FareRecommendationSystem.getFare(g2));
+        AirlineCustomer g2 = new AirlineCustomer(20, 9, TravelerType.STUDENT, TravelClass.ECONOMY, null, 0, false, true);
+        assertEquals("Gorrión", FareRecommendationSystem.getFare(g2).getName());
+        assertEquals(15, FareRecommendationSystem.getFare(g2).getDiscount());
 
-        AirlineCustomer g3 = new AirlineCustomer(26, 9, TravelerType.STUDENT, TravelClass.ECONOMY, null, 0, false, false);
-        assertEquals(null, FareRecommendationSystem.getFare(g3));
+        AirlineCustomer g3 = new AirlineCustomer(23, 3, TravelerType.WORKER, TravelClass.ECONOMY, null, 0, false, true);
+        assertEquals("Travel While You Can", FareRecommendationSystem.getFare(g3).getName());
+        assertEquals(5, FareRecommendationSystem.getFare(g3).getDiscount());
 
-        AirlineCustomer g4 = new AirlineCustomer(20, 9, TravelerType.WORKER, TravelClass.ECONOMY, null, 0, false, false);
-        assertEquals(null, FareRecommendationSystem.getFare(g4));
+        AirlineCustomer g4 = new AirlineCustomer(23, 3, TravelerType.WORKER, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals("Daring to Leave the Nest", FareRecommendationSystem.getFare(g4).getName());
+        assertEquals(25, FareRecommendationSystem.getFare(g4).getDiscount());
 
-        AirlineCustomer g5 = new AirlineCustomer(22, 3, TravelerType.WORKER, TravelClass.ECONOMY, null, 0, false, false);
-        assertEquals("YOUNG_WORKER", FareRecommendationSystem.getFare(g5));
+        AirlineCustomer g5 = new AirlineCustomer(35, 6, null, TravelClass.ECONOMY, Destination.EUROPE, 25000, true, false);
+        assertEquals("Discover Europe with Your Little Ones", FareRecommendationSystem.getFare(g5).getName());
+        assertEquals(10, FareRecommendationSystem.getFare(g5).getDiscount());
 
-        AirlineCustomer g6 = new AirlineCustomer(17, 3, TravelerType.WORKER, TravelClass.ECONOMY, null, 0, false, false);
-        assertEquals(null, FareRecommendationSystem.getFare(g6));
+        AirlineCustomer g6 = new AirlineCustomer(35, 6, null, TravelClass.ECONOMY, Destination.EUROPE, 25000, false, false);
+        assertEquals("Discover Europe", FareRecommendationSystem.getFare(g6).getName());
+        assertEquals(15, FareRecommendationSystem.getFare(g6).getDiscount());
 
-        AirlineCustomer g7 = new AirlineCustomer(26, 3, TravelerType.WORKER, TravelClass.ECONOMY, null, 0, false, false);
-        assertEquals(null, FareRecommendationSystem.getFare(g7));
+        AirlineCustomer g7 = new AirlineCustomer(40, 6, null, TravelClass.BUSINESS, Destination.AMERICA, 35000, true, false);
+        assertEquals("Discover the World with Your Little Ones", FareRecommendationSystem.getFare(g7).getName());
+        assertEquals(10, FareRecommendationSystem.getFare(g7).getDiscount());
 
-        AirlineCustomer g8 = new AirlineCustomer(30, 6, null, TravelClass.ECONOMY, Destination.EUROPE, 25000, false, false);
-        assertEquals("MID_INCOME_ADULT", FareRecommendationSystem.getFare(g8));
+        AirlineCustomer g8 = new AirlineCustomer(40, 6, null, TravelClass.BUSINESS, Destination.AMERICA, 35000, false, false);
+        assertEquals("Discover the World", FareRecommendationSystem.getFare(g8).getName());
+        assertEquals(20, FareRecommendationSystem.getFare(g8).getDiscount());
 
-        AirlineCustomer g9 = new AirlineCustomer(25, 6, null, TravelClass.ECONOMY, Destination.EUROPE, 25000, false, false);
+        AirlineCustomer g9 = new AirlineCustomer(40, 1, null, TravelClass.BUSINESS, Destination.AMERICA, 35000, false, false);
         assertEquals(null, FareRecommendationSystem.getFare(g9));
 
-        AirlineCustomer g10 = new AirlineCustomer(30, 6, null, TravelClass.ECONOMY, Destination.EUROPE, 19000, false, false);
-        assertEquals(null, FareRecommendationSystem.getFare(g10));
-
-        AirlineCustomer g11 = new AirlineCustomer(30, 6, null, TravelClass.ECONOMY, Destination.EUROPE, 36000, false, false);
-        assertEquals(null, FareRecommendationSystem.getFare(g11));
-
-        AirlineCustomer g12 = new AirlineCustomer(40, 6, null, TravelClass.BUSINESS, Destination.ASIA, 50000, false, false);
-        assertEquals("HIGH_INCOME_ADULT", FareRecommendationSystem.getFare(g12));
-
-        AirlineCustomer g13 = new AirlineCustomer(25, 6, null, TravelClass.BUSINESS, Destination.ASIA, 50000, false, false);
-        assertEquals(null, FareRecommendationSystem.getFare(g13));
-
-        AirlineCustomer g14 = new AirlineCustomer(40, 6, null, TravelClass.BUSINESS, Destination.ASIA, 34000, false, false);
-        assertEquals(null, FareRecommendationSystem.getFare(g14));
-
-        AirlineCustomer g15 = new AirlineCustomer(40, 6, null, TravelClass.ECONOMY, Destination.ASIA, 50000, false, false);
-        assertEquals(null, FareRecommendationSystem.getFare(g15));
-
-        AirlineCustomer g16 = new AirlineCustomer(40, 5, null, TravelClass.BUSINESS, Destination.ASIA, 50000, false, false);
-        assertEquals(null, FareRecommendationSystem.getFare(g16));
-
-        AirlineCustomer g17 = new AirlineCustomer(40, 6, null, TravelClass.BUSINESS, Destination.EUROPE, 50000, false, false);
-        assertEquals(null, FareRecommendationSystem.getFare(g17));
     }
 
 }

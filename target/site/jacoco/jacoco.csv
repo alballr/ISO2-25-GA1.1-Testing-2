@@ -1,8 +1,0 @@
-GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
-Testing 2,default,Destination,0,27,0,0,0,2,0,1,0,1
-Testing 2,default,TravelerType,0,15,0,0,0,2,0,1,0,1
-Testing 2,default,AirlineCustomer,0,86,0,0,0,27,0,18,0,18
-Testing 2,default,TravelClass,0,15,0,0,0,2,0,1,0,1
-Testing 2,default,TypeFare,0,15,0,0,0,6,0,3,0,3
-Testing 2,default,FareRecommendationSystem,36,166,7,55,6,44,6,31,1,5
-Testing 2,default,testing2,3,132,0,2,1,33,1,2,1,1
