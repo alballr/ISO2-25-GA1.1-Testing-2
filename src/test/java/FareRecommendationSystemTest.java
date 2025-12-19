@@ -5,48 +5,268 @@ public class FareRecommendationSystemTest {
     
     @Test
     public void isStudentTest() {
-        AirlineCustomer s1 = new AirlineCustomer(20, 9, TravelerType.STUDENT, TravelClass.ECONOMY, null, 0, false, false);
-        assertEquals(true, FareRecommendationSystem.isStudent(s1));
 
-        AirlineCustomer s2 = new AirlineCustomer(17, 9, TravelerType.STUDENT, TravelClass.ECONOMY, null, 0, false, false);
-        assertEquals(false, FareRecommendationSystem.isStudent(s2));
+        AirlineCustomer p1 = new AirlineCustomer(0, 0, TravelerType.STUDENT, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isStudent(p1));
 
-        AirlineCustomer s3 = new AirlineCustomer(26, 9, TravelerType.STUDENT, TravelClass.ECONOMY, null, 0, false, false);
-        assertEquals(false, FareRecommendationSystem.isStudent(s3));
+        AirlineCustomer p2 = new AirlineCustomer(0, 7, TravelerType.WORKER, TravelClass.BUSINESS, null, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isStudent(p2));
 
-        AirlineCustomer s4 = new AirlineCustomer(20, 9, TravelerType.WORKER, TravelClass.ECONOMY, null, 0, false, false);
-        assertEquals(false, FareRecommendationSystem.isStudent(s4));
+        AirlineCustomer p3 = new AirlineCustomer(11, 9, TravelerType.STUDENT, TravelClass.BUSINESS, null, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isStudent(p3));
 
-        AirlineCustomer s5 = new AirlineCustomer(20, 9, TravelerType.STUDENT, TravelClass.BUSINESS, null, 0, false, false);
-        assertEquals(false, FareRecommendationSystem.isStudent(s5));
+        AirlineCustomer p4 = new AirlineCustomer(11, 19, TravelerType.WORKER, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isStudent(p4));
 
-        AirlineCustomer s6 = new AirlineCustomer(20, 8, TravelerType.STUDENT, TravelClass.ECONOMY, null, 0, false, false);
-        assertEquals(false, FareRecommendationSystem.isStudent(s6));
+        AirlineCustomer p5 = new AirlineCustomer(18, 0, TravelerType.WORKER, TravelClass.BUSINESS, null, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isStudent(p5));
+
+        AirlineCustomer p6 = new AirlineCustomer(18, 7, TravelerType.STUDENT, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isStudent(p6));
+
+        AirlineCustomer p7 = new AirlineCustomer(21, 9, TravelerType.WORKER, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isStudent(p7));
+
+        AirlineCustomer p8 = new AirlineCustomer(21, 19, TravelerType.STUDENT, TravelClass.BUSINESS, null, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isStudent(p8));
+
+        AirlineCustomer p9 = new AirlineCustomer(25, 0, TravelerType.STUDENT, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isStudent(p9));
+
+        AirlineCustomer p10 = new AirlineCustomer(25, 7, TravelerType.WORKER, TravelClass.BUSINESS, null, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isStudent(p10));
+
+        AirlineCustomer p11 = new AirlineCustomer(30, 0, TravelerType.STUDENT, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isStudent(p11));
+
+        AirlineCustomer p12 = new AirlineCustomer(30, 7, TravelerType.WORKER, TravelClass.BUSINESS, null, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isStudent(p12));
+
+        AirlineCustomer p13 = new AirlineCustomer(0, 9, TravelerType.STUDENT, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isStudent(p13));
+
+        AirlineCustomer p14 = new AirlineCustomer(0, 19, TravelerType.STUDENT, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isStudent(p14));
+
+        AirlineCustomer p15 = new AirlineCustomer(11, 0, TravelerType.STUDENT, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isStudent(p15));
+
+        AirlineCustomer p16 = new AirlineCustomer(11, 7, TravelerType.STUDENT, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isStudent(p16));
+
+        AirlineCustomer p17 = new AirlineCustomer(18, 9, TravelerType.STUDENT, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals(true, FareRecommendationSystem.isStudent(p17));
+
+        AirlineCustomer p18 = new AirlineCustomer(18, 19, TravelerType.STUDENT, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals(true, FareRecommendationSystem.isStudent(p18));
+
+        AirlineCustomer p19 = new AirlineCustomer(21, 0, TravelerType.STUDENT, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isStudent(p19));
+
+        AirlineCustomer p20 = new AirlineCustomer(21, 7, TravelerType.STUDENT, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isStudent(p20));
+
+        AirlineCustomer p21 = new AirlineCustomer(25, 9, TravelerType.STUDENT, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals(true, FareRecommendationSystem.isStudent(p21));
+
+        AirlineCustomer p22 = new AirlineCustomer(25, 19, TravelerType.STUDENT, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals(true, FareRecommendationSystem.isStudent(p22));
+
+        AirlineCustomer p23 = new AirlineCustomer(30, 9, TravelerType.STUDENT, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isStudent(p23));
+
+        AirlineCustomer p24 = new AirlineCustomer(30, 19, TravelerType.STUDENT, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isStudent(p24));
+
+        AirlineCustomer m1 = new AirlineCustomer(20, 9, TravelerType.STUDENT, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals(true, FareRecommendationSystem.isStudent(m1));
+
+        AirlineCustomer m2 = new AirlineCustomer(17, 9, TravelerType.STUDENT, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isStudent(m2));
+
+        AirlineCustomer m3 = new AirlineCustomer(26, 9, TravelerType.STUDENT, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isStudent(m3));
+
+        AirlineCustomer m4 = new AirlineCustomer(20, 9, TravelerType.WORKER, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isStudent(m4));
+
+        AirlineCustomer m5 = new AirlineCustomer(20, 9, TravelerType.STUDENT, TravelClass.BUSINESS, null, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isStudent(m5));
+
+        AirlineCustomer m6 = new AirlineCustomer(20, 8, TravelerType.STUDENT, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isStudent(m6));
     }
+
 
     @Test
     public void isYoungWorkerTest() {
-        AirlineCustomer y1 = new AirlineCustomer(22, 3, TravelerType.WORKER, TravelClass.ECONOMY, null, 0, false, false);
-        assertEquals(true, FareRecommendationSystem.isYoungWorker(y1));
 
-        AirlineCustomer y2 = new AirlineCustomer(17, 3, TravelerType.WORKER, TravelClass.ECONOMY, null, 0, false, false);
-        assertEquals(false, FareRecommendationSystem.isYoungWorker(y2));
+        AirlineCustomer p1 = new AirlineCustomer(0, 0, TravelerType.STUDENT, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isYoungWorker(p1));
 
-        AirlineCustomer y3 = new AirlineCustomer(26, 3, TravelerType.WORKER, TravelClass.ECONOMY, null, 0, false, false);
-        assertEquals(false, FareRecommendationSystem.isYoungWorker(y3));
+        AirlineCustomer p2 = new AirlineCustomer(0, 2, TravelerType.WORKER, TravelClass.BUSINESS, null, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isYoungWorker(p2));
 
-        AirlineCustomer y4 = new AirlineCustomer(22, 3, TravelerType.STUDENT, TravelClass.ECONOMY, null, 0, false, false);
-        assertEquals(false, FareRecommendationSystem.isYoungWorker(y4));
+        AirlineCustomer p3 = new AirlineCustomer(11, 3, TravelerType.STUDENT, TravelClass.BUSINESS, null, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isYoungWorker(p3));
 
-        AirlineCustomer y5 = new AirlineCustomer(22, 3, TravelerType.WORKER, TravelClass.BUSINESS, null, 0, false, false);
-        assertEquals(false, FareRecommendationSystem.isYoungWorker(y5));
+        AirlineCustomer p4 = new AirlineCustomer(11, 19, TravelerType.WORKER, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isYoungWorker(p4));
 
-        AirlineCustomer y6 = new AirlineCustomer(22, 2, TravelerType.WORKER, TravelClass.BUSINESS, null, 0, false, false);
-        assertEquals(false, FareRecommendationSystem.isYoungWorker(y6));
+        AirlineCustomer p5 = new AirlineCustomer(18, 0, TravelerType.WORKER, TravelClass.BUSINESS, null, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isYoungWorker(p5));
+
+        AirlineCustomer p6 = new AirlineCustomer(18, 2, TravelerType.STUDENT, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isYoungWorker(p6));
+
+        AirlineCustomer p7 = new AirlineCustomer(21, 3, TravelerType.WORKER, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals(true, FareRecommendationSystem.isYoungWorker(p7));
+
+        AirlineCustomer p8 = new AirlineCustomer(21, 19, TravelerType.STUDENT, TravelClass.BUSINESS, null, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isYoungWorker(p8));
+
+        AirlineCustomer p9 = new AirlineCustomer(25, 0, TravelerType.STUDENT, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isYoungWorker(p9));
+
+        AirlineCustomer p10 = new AirlineCustomer(25, 2, TravelerType.WORKER, TravelClass.BUSINESS, null, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isYoungWorker(p10));
+
+        AirlineCustomer p11 = new AirlineCustomer(30, 0, TravelerType.STUDENT, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isYoungWorker(p11));
+
+        AirlineCustomer p12 = new AirlineCustomer(30, 2, TravelerType.WORKER, TravelClass.BUSINESS, null, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isYoungWorker(p12));
+
+        AirlineCustomer p13 = new AirlineCustomer(0, 3, TravelerType.STUDENT, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isYoungWorker(p13));
+
+        AirlineCustomer p14 = new AirlineCustomer(0, 19, TravelerType.STUDENT, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isYoungWorker(p14));
+
+        AirlineCustomer p15 = new AirlineCustomer(11, 0, TravelerType.STUDENT, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isYoungWorker(p15));
+
+        AirlineCustomer p16 = new AirlineCustomer(11, 2, TravelerType.STUDENT, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isYoungWorker(p16));
+
+        AirlineCustomer p17 = new AirlineCustomer(18, 3, TravelerType.STUDENT, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isYoungWorker(p17));
+
+        AirlineCustomer p18 = new AirlineCustomer(18, 19, TravelerType.STUDENT, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isYoungWorker(p18));
+
+        AirlineCustomer p19 = new AirlineCustomer(21, 0, TravelerType.STUDENT, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isYoungWorker(p19));
+
+        AirlineCustomer p20 = new AirlineCustomer(21, 2, TravelerType.STUDENT, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isYoungWorker(p20));
+
+        AirlineCustomer p21 = new AirlineCustomer(25, 3, TravelerType.STUDENT, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isYoungWorker(p21));
+
+        AirlineCustomer p22 = new AirlineCustomer(25, 19, TravelerType.STUDENT, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isYoungWorker(p22));
+
+        AirlineCustomer p23 = new AirlineCustomer(30, 3, TravelerType.STUDENT, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isYoungWorker(p23));
+
+        AirlineCustomer p24 = new AirlineCustomer(30, 19, TravelerType.STUDENT, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isYoungWorker(p24));
+
+        AirlineCustomer m1 = new AirlineCustomer(22, 3, TravelerType.WORKER, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals(true, FareRecommendationSystem.isYoungWorker(m1));
+
+        AirlineCustomer m2 = new AirlineCustomer(17, 3, TravelerType.WORKER, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isYoungWorker(m2));
+
+        AirlineCustomer m3 = new AirlineCustomer(26, 3, TravelerType.WORKER, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isYoungWorker(m3));
+
+        AirlineCustomer m4 = new AirlineCustomer(22, 3, TravelerType.STUDENT, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isYoungWorker(m4));
+
+        AirlineCustomer m5 = new AirlineCustomer(22, 3, TravelerType.WORKER, TravelClass.BUSINESS, null, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isYoungWorker(m5));
+
+        AirlineCustomer m6 = new AirlineCustomer(22, 2, TravelerType.WORKER, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isYoungWorker(m6));
     }
 
     @Test
     public void isMidIncomeAdultTest() {
+
+        AirlineCustomer p1 = new AirlineCustomer(0, 0, null, TravelClass.ECONOMY, Destination.EUROPE, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isMidIncomeAdult(p1));
+
+        AirlineCustomer p2 = new AirlineCustomer(0, 5, null, TravelClass.BUSINESS, Destination.ASIA, 10000, false, false);
+        assertEquals(false, FareRecommendationSystem.isMidIncomeAdult(p2));
+
+        AirlineCustomer p3 = new AirlineCustomer(21, 6, null, TravelClass.BUSINESS, Destination.AMERICA, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isMidIncomeAdult(p3));
+
+        AirlineCustomer p4 = new AirlineCustomer(21, 19, null, TravelClass.ECONOMY, Destination.OTHER, 10000, false, false);
+        assertEquals(false, FareRecommendationSystem.isMidIncomeAdult(p4));
+
+        AirlineCustomer p5 = new AirlineCustomer(25, 5, null, TravelClass.ECONOMY, Destination.AMERICA, 20000, false, false);
+        assertEquals(false, FareRecommendationSystem.isMidIncomeAdult(p5));
+
+        AirlineCustomer p6 = new AirlineCustomer(25, 0, null, TravelClass.BUSINESS, Destination.OTHER, 30000, false, false);
+        assertEquals(false, FareRecommendationSystem.isMidIncomeAdult(p6));
+
+        AirlineCustomer p7 = new AirlineCustomer(30, 19, null, TravelClass.BUSINESS, Destination.EUROPE, 20000, false, false);
+        assertEquals(false, FareRecommendationSystem.isMidIncomeAdult(p7));
+
+        AirlineCustomer p8 = new AirlineCustomer(30, 6, null, TravelClass.ECONOMY, Destination.ASIA, 30000, false, false);
+        assertEquals(false, FareRecommendationSystem.isMidIncomeAdult(p8));
+
+        AirlineCustomer p9 = new AirlineCustomer(0, 6, null, TravelClass.ECONOMY, Destination.OTHER, 35000, false, false);
+        assertEquals(false, FareRecommendationSystem.isMidIncomeAdult(p9));
+
+        AirlineCustomer p10 = new AirlineCustomer(0, 19, null, TravelClass.ECONOMY, Destination.AMERICA, 1000000, false, false);
+        assertEquals(false, FareRecommendationSystem.isMidIncomeAdult(p10));
+
+        AirlineCustomer p11 = new AirlineCustomer(21, 0, null, TravelClass.BUSINESS, Destination.ASIA, 35000, false, false);
+        assertEquals(false, FareRecommendationSystem.isMidIncomeAdult(p11));
+
+        AirlineCustomer p12 = new AirlineCustomer(21, 5, null, TravelClass.BUSINESS, Destination.EUROPE, 1000000, false, false);
+        assertEquals(false, FareRecommendationSystem.isMidIncomeAdult(p12));
+
+        AirlineCustomer p13 = new AirlineCustomer(25, 19, null, TravelClass.ECONOMY, Destination.ASIA, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isMidIncomeAdult(p13));
+
+        AirlineCustomer p14 = new AirlineCustomer(25, 6, null, TravelClass.ECONOMY, Destination.EUROPE, 10000, false, false);
+        assertEquals(false, FareRecommendationSystem.isMidIncomeAdult(p14));
+
+        AirlineCustomer p15 = new AirlineCustomer(30, 5, null, TravelClass.ECONOMY, Destination.OTHER, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isMidIncomeAdult(p15));
+
+        AirlineCustomer p16 = new AirlineCustomer(30, 0, null, TravelClass.ECONOMY, Destination.AMERICA, 10000, false, false);
+        assertEquals(false, FareRecommendationSystem.isMidIncomeAdult(p16));
+
+        AirlineCustomer p17 = new AirlineCustomer(0, 0, null, TravelClass.ECONOMY, Destination.ASIA, 20000, false, false);
+        assertEquals(false, FareRecommendationSystem.isMidIncomeAdult(p17));
+
+        AirlineCustomer p18 = new AirlineCustomer(0, 5, null, TravelClass.ECONOMY, Destination.EUROPE, 30000, false, false);
+        assertEquals(false, FareRecommendationSystem.isMidIncomeAdult(p18));
+
+        AirlineCustomer p19 = new AirlineCustomer(21, 6, null, TravelClass.ECONOMY, Destination.OTHER, 20000, false, false);
+        assertEquals(false, FareRecommendationSystem.isMidIncomeAdult(p19));
+
+        AirlineCustomer p20 = new AirlineCustomer(21, 19, null, TravelClass.ECONOMY, Destination.AMERICA, 30000, false, false);
+        assertEquals(false, FareRecommendationSystem.isMidIncomeAdult(p20));
+
+        AirlineCustomer p21 = new AirlineCustomer(25, 5, null, TravelClass.ECONOMY, Destination.EUROPE, 35000, false, false);
+        assertEquals(false, FareRecommendationSystem.isMidIncomeAdult(p21));
+
+        AirlineCustomer p22 = new AirlineCustomer(25, 0, null, TravelClass.ECONOMY, Destination.ASIA, 1000000, false, false);
+        assertEquals(false, FareRecommendationSystem.isMidIncomeAdult(p22));
+
+        AirlineCustomer p23 = new AirlineCustomer(30, 19, null, TravelClass.ECONOMY, Destination.AMERICA, 35000, false, false);
+        assertEquals(false, FareRecommendationSystem.isMidIncomeAdult(p23));
+
+        AirlineCustomer p24 = new AirlineCustomer(30, 6, null, TravelClass.ECONOMY, Destination.OTHER, 1000000, false, false);
+        assertEquals(false, FareRecommendationSystem.isMidIncomeAdult(p24));
+
         AirlineCustomer m1 = new AirlineCustomer(30, 6, null, TravelClass.ECONOMY, Destination.EUROPE, 25000, false, false);
         assertEquals(true, FareRecommendationSystem.isMidIncomeAdult(m1));
 
@@ -69,25 +289,131 @@ public class FareRecommendationSystemTest {
         assertEquals(false, FareRecommendationSystem.isMidIncomeAdult(m7));
     }
 
+
+
     @Test
     public void isHighIncomeAdultTest() {
-        AirlineCustomer h1 = new AirlineCustomer(40, 6, null, TravelClass.BUSINESS, Destination.ASIA, 50000, false, false);
-        assertEquals(true, FareRecommendationSystem.isHighIncomeAdult(h1));
 
-        AirlineCustomer h2 = new AirlineCustomer(25, 6, null, TravelClass.BUSINESS, Destination.ASIA, 50000, false, false);
-        assertEquals(false, FareRecommendationSystem.isHighIncomeAdult(h2));
+        AirlineCustomer p1 = new AirlineCustomer(0, 0, null, TravelClass.ECONOMY, Destination.EUROPE, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isHighIncomeAdult(p1));
 
-        AirlineCustomer h3 = new AirlineCustomer(40, 6, null, TravelClass.BUSINESS, Destination.ASIA, 34000, false, false);
-        assertEquals(false, FareRecommendationSystem.isHighIncomeAdult(h3));
+        AirlineCustomer p2 = new AirlineCustomer(0, 5, null, TravelClass.BUSINESS, Destination.ASIA, 30000, false, false);
+        assertEquals(false, FareRecommendationSystem.isHighIncomeAdult(p2));
 
-        AirlineCustomer h4 = new AirlineCustomer(40, 6, null, TravelClass.ECONOMY, Destination.ASIA, 50000, false, false);
-        assertEquals(false, FareRecommendationSystem.isHighIncomeAdult(h4));
+        AirlineCustomer p3 = new AirlineCustomer(21, 6, null, TravelClass.BUSINESS, Destination.AMERICA, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isHighIncomeAdult(p3));
 
-        AirlineCustomer h5 = new AirlineCustomer(40, 5, null, TravelClass.BUSINESS, Destination.ASIA, 50000, false, false);
-        assertEquals(false, FareRecommendationSystem.isHighIncomeAdult(h5));
+        AirlineCustomer p4 = new AirlineCustomer(21, 19, null, TravelClass.ECONOMY, Destination.OTHER, 30000, false, false);
+        assertEquals(false, FareRecommendationSystem.isHighIncomeAdult(p4));
 
-        AirlineCustomer h6 = new AirlineCustomer(40, 6, null, TravelClass.BUSINESS, Destination.EUROPE, 50000, false, false);
-        assertEquals(false, FareRecommendationSystem.isHighIncomeAdult(h6));
+        AirlineCustomer p5 = new AirlineCustomer(25, 5, null, TravelClass.ECONOMY, Destination.AMERICA, 35000, false, false);
+        assertEquals(false, FareRecommendationSystem.isHighIncomeAdult(p5));
+
+        AirlineCustomer p6 = new AirlineCustomer(25, 0, null, TravelClass.BUSINESS, Destination.OTHER, 1000000, false, false);
+        assertEquals(false, FareRecommendationSystem.isHighIncomeAdult(p6));
+
+        AirlineCustomer p7 = new AirlineCustomer(30, 19, null, TravelClass.BUSINESS, Destination.EUROPE, 35000, false, false);
+        assertEquals(false, FareRecommendationSystem.isHighIncomeAdult(p7));
+
+        AirlineCustomer p8 = new AirlineCustomer(30, 6, null, TravelClass.ECONOMY, Destination.ASIA, 1000000, false, false);
+        assertEquals(false, FareRecommendationSystem.isHighIncomeAdult(p8));
+
+        AirlineCustomer p9 = new AirlineCustomer(0, 6, null, TravelClass.ECONOMY, Destination.OTHER, 35000, false, false);
+        assertEquals(false, FareRecommendationSystem.isHighIncomeAdult(p9));
+
+        AirlineCustomer p10 = new AirlineCustomer(0, 19, null, TravelClass.ECONOMY, Destination.AMERICA, 1000000, false, false);
+        assertEquals(false, FareRecommendationSystem.isHighIncomeAdult(p10));
+
+        AirlineCustomer p11 = new AirlineCustomer(21, 0, null, TravelClass.ECONOMY, Destination.ASIA, 35000, false, false);
+        assertEquals(false, FareRecommendationSystem.isHighIncomeAdult(p11));
+
+        AirlineCustomer p12 = new AirlineCustomer(21, 5, null, TravelClass.ECONOMY, Destination.EUROPE, 1000000, false, false);
+        assertEquals(false, FareRecommendationSystem.isHighIncomeAdult(p12));
+
+        AirlineCustomer p13 = new AirlineCustomer(25, 19, null, TravelClass.ECONOMY, Destination.ASIA, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isHighIncomeAdult(p13));
+
+        AirlineCustomer p14 = new AirlineCustomer(25, 6, null, TravelClass.ECONOMY, Destination.EUROPE, 30000, false, false);
+        assertEquals(false, FareRecommendationSystem.isHighIncomeAdult(p14));
+
+        AirlineCustomer p15 = new AirlineCustomer(30, 5, null, TravelClass.ECONOMY, Destination.OTHER, 0, false, false);
+        assertEquals(false, FareRecommendationSystem.isHighIncomeAdult(p15));
+
+        AirlineCustomer p16 = new AirlineCustomer(30, 0, null, TravelClass.ECONOMY, Destination.AMERICA, 30000, false, false);
+        assertEquals(false, FareRecommendationSystem.isHighIncomeAdult(p16));
+
+        AirlineCustomer m1 = new AirlineCustomer(40, 6, null, TravelClass.BUSINESS, Destination.ASIA, 50000, false, false);
+        assertEquals(true, FareRecommendationSystem.isHighIncomeAdult(m1));
+
+        AirlineCustomer m2 = new AirlineCustomer(25, 6, null, TravelClass.BUSINESS, Destination.ASIA, 50000, false, false);
+        assertEquals(false, FareRecommendationSystem.isHighIncomeAdult(m2));
+
+        AirlineCustomer m3 = new AirlineCustomer(40, 6, null, TravelClass.BUSINESS, Destination.ASIA, 34000, false, false);
+        assertEquals(false, FareRecommendationSystem.isHighIncomeAdult(m3));
+
+        AirlineCustomer m4 = new AirlineCustomer(40, 6, null, TravelClass.ECONOMY, Destination.ASIA, 50000, false, false);
+        assertEquals(false, FareRecommendationSystem.isHighIncomeAdult(m4));
+
+        AirlineCustomer m5 = new AirlineCustomer(40, 5, null, TravelClass.BUSINESS, Destination.ASIA, 50000, false, false);
+        assertEquals(false, FareRecommendationSystem.isHighIncomeAdult(m5));
+
+        AirlineCustomer m6 = new AirlineCustomer(40, 6, null, TravelClass.BUSINESS, Destination.EUROPE, 50000, false, false);
+        assertEquals(false, FareRecommendationSystem.isHighIncomeAdult(m6));
+    }
+
+    @Test
+    public void getFareTest() {
+
+        AirlineCustomer g1 = new AirlineCustomer(20, 9, TravelerType.STUDENT, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals("STUDENT", FareRecommendationSystem.getFare(g1));
+
+        AirlineCustomer g2 = new AirlineCustomer(17, 9, TravelerType.STUDENT, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals(null, FareRecommendationSystem.getFare(g2));
+
+        AirlineCustomer g3 = new AirlineCustomer(26, 9, TravelerType.STUDENT, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals(null, FareRecommendationSystem.getFare(g3));
+
+        AirlineCustomer g4 = new AirlineCustomer(20, 9, TravelerType.WORKER, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals(null, FareRecommendationSystem.getFare(g4));
+
+        AirlineCustomer g5 = new AirlineCustomer(22, 3, TravelerType.WORKER, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals("YOUNG_WORKER", FareRecommendationSystem.getFare(g5));
+
+        AirlineCustomer g6 = new AirlineCustomer(17, 3, TravelerType.WORKER, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals(null, FareRecommendationSystem.getFare(g6));
+
+        AirlineCustomer g7 = new AirlineCustomer(26, 3, TravelerType.WORKER, TravelClass.ECONOMY, null, 0, false, false);
+        assertEquals(null, FareRecommendationSystem.getFare(g7));
+
+        AirlineCustomer g8 = new AirlineCustomer(30, 6, null, TravelClass.ECONOMY, Destination.EUROPE, 25000, false, false);
+        assertEquals("MID_INCOME_ADULT", FareRecommendationSystem.getFare(g8));
+
+        AirlineCustomer g9 = new AirlineCustomer(25, 6, null, TravelClass.ECONOMY, Destination.EUROPE, 25000, false, false);
+        assertEquals(null, FareRecommendationSystem.getFare(g9));
+
+        AirlineCustomer g10 = new AirlineCustomer(30, 6, null, TravelClass.ECONOMY, Destination.EUROPE, 19000, false, false);
+        assertEquals(null, FareRecommendationSystem.getFare(g10));
+
+        AirlineCustomer g11 = new AirlineCustomer(30, 6, null, TravelClass.ECONOMY, Destination.EUROPE, 36000, false, false);
+        assertEquals(null, FareRecommendationSystem.getFare(g11));
+
+        AirlineCustomer g12 = new AirlineCustomer(40, 6, null, TravelClass.BUSINESS, Destination.ASIA, 50000, false, false);
+        assertEquals("HIGH_INCOME_ADULT", FareRecommendationSystem.getFare(g12));
+
+        AirlineCustomer g13 = new AirlineCustomer(25, 6, null, TravelClass.BUSINESS, Destination.ASIA, 50000, false, false);
+        assertEquals(null, FareRecommendationSystem.getFare(g13));
+
+        AirlineCustomer g14 = new AirlineCustomer(40, 6, null, TravelClass.BUSINESS, Destination.ASIA, 34000, false, false);
+        assertEquals(null, FareRecommendationSystem.getFare(g14));
+
+        AirlineCustomer g15 = new AirlineCustomer(40, 6, null, TravelClass.ECONOMY, Destination.ASIA, 50000, false, false);
+        assertEquals(null, FareRecommendationSystem.getFare(g15));
+
+        AirlineCustomer g16 = new AirlineCustomer(40, 5, null, TravelClass.BUSINESS, Destination.ASIA, 50000, false, false);
+        assertEquals(null, FareRecommendationSystem.getFare(g16));
+
+        AirlineCustomer g17 = new AirlineCustomer(40, 6, null, TravelClass.BUSINESS, Destination.EUROPE, 50000, false, false);
+        assertEquals(null, FareRecommendationSystem.getFare(g17));
     }
 
 }

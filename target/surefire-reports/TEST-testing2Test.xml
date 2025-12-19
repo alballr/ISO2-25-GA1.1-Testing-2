@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="15" failures="0" name="testing2Test" time="0.429" errors="0" skipped="0">
+<testsuite tests="15" failures="0" name="testing2Test" time="0.317" errors="0" skipped="0">
   <properties>
     <property name="jansi.mode" value="force"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -58,19 +58,19 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.endian" value="little"/>
   </properties>
-  <testcase classname="testing2Test" name="testMainWithOtherDestination" time="0.372"/>
+  <testcase classname="testing2Test" name="testMainWithOtherDestination" time="0.262"/>
   <testcase classname="testing2Test" name="testMainWithInvalidEnumInput" time="0"/>
   <testcase classname="testing2Test" name="testMainWithYoungStudent" time="0"/>
-  <testcase classname="testing2Test" name="testMainWithTypicalWorkerProfile" time="0.02"/>
-  <testcase classname="testing2Test" name="testMainWithHighIncomeWorker" time="0.005"/>
-  <testcase classname="testing2Test" name="testClassExists" time="0"/>
-  <testcase classname="testing2Test" name="testMainWithBoundaryAgeValues" time="0.011"/>
-  <testcase classname="testing2Test" name="testMainWithValidStudentEconomyInput" time="0.002"/>
-  <testcase classname="testing2Test" name="testMainWithTravelWithChildren" time="0"/>
+  <testcase classname="testing2Test" name="testMainWithTypicalWorkerProfile" time="0.006"/>
+  <testcase classname="testing2Test" name="testMainWithHighIncomeWorker" time="0.004"/>
+  <testcase classname="testing2Test" name="testClassExists" time="0.004"/>
+  <testcase classname="testing2Test" name="testMainWithBoundaryAgeValues" time="0.005"/>
+  <testcase classname="testing2Test" name="testMainWithValidStudentEconomyInput" time="0.006"/>
+  <testcase classname="testing2Test" name="testMainWithTravelWithChildren" time="0.008"/>
   <testcase classname="testing2Test" name="testMainMethodExists" time="0"/>
-  <testcase classname="testing2Test" name="testMainWithDifferentDestinations" time="0.012"/>
+  <testcase classname="testing2Test" name="testMainWithDifferentDestinations" time="0.003"/>
   <testcase classname="testing2Test" name="testMainWithTypicalStudentProfile" time="0.003"/>
-  <testcase classname="testing2Test" name="testMainWithMaximumFlights" time="0"/>
-  <testcase classname="testing2Test" name="testMainWithValidWorkerBusinessInput" time="0"/>
-  <testcase classname="testing2Test" name="testMainWithMinimalFlights" time="0.004"/>
+  <testcase classname="testing2Test" name="testMainWithMaximumFlights" time="0.005"/>
+  <testcase classname="testing2Test" name="testMainWithValidWorkerBusinessInput" time="0.006"/>
+  <testcase classname="testing2Test" name="testMainWithMinimalFlights" time="0.005"/>
 </testsuite>
